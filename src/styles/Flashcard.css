@@ -1,0 +1,152 @@
+.flashcard {
+  width: 100%;
+  max-width: 580px;
+  height: 350px;
+  perspective: 1500px;
+  cursor: pointer;
+  user-select: none;
+  margin: 0 auto;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  box-shadow: var(--glow-blue);
+  border-radius: 12px;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.flashcard-front {
+  background: linear-gradient(
+    145deg, 
+    rgba(13, 11, 51, 0.8),
+    rgba(35, 22, 81, 0.8)
+  );
+  border: 2px solid var(--neon-blue);
+  color: white;
+}
+
+.flashcard-front::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, transparent 50%, rgba(5, 217, 232, 0.2) 50%);
+  border-radius: 0 0 0 100px;
+}
+
+.flashcard-back {
+  background: linear-gradient(
+    145deg,
+    rgba(35, 22, 81, 0.8),
+    rgba(255, 42, 109, 0.4)
+  );
+  border: 2px solid var(--neon-pink);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flashcard-back::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, transparent 50%, rgba(167, 66, 245, 0.2) 50%);
+  border-radius: 0 100px 0 0;
+}
+
+.content {
+  z-index: 2;
+  font-family: var(--font-body);
+}
+
+.content h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: white;
+  text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: white;
+  text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.instruction {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Cyber-style glitch animation on hover */
+.flashcard:hover .flashcard-inner {
+  box-shadow: 
+    0 0 5px var(--neon-blue),
+    0 0 10px var(--neon-blue),
+    0 0 15px var(--neon-blue);
+}
+
+@media (max-width: 768px) {
+  .flashcard {
+    height: 300px;
+  }
+  
+  .content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flashcard {
+    height: 240px;
+  }
+  
+  .flashcard-front, .flashcard-back {
+    padding: 1.25rem;
+  }
+  
+  .content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .content p {
+    font-size: 1rem;
+  }
+}

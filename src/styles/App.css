@@ -1,0 +1,71 @@
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+h1 {
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+}
+
+header p {
+  color: var(--gray-500);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.flashcard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 380px;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.app-container {
+  background: linear-gradient(135deg, #ffffff 0%, var(--gray-100) 100%);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 2.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1.5rem 1rem;
+  }
+  
+  .app-container {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .flashcard-container {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .flashcard-container {
+    min-height: 250px;
+  }
+}
