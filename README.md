@@ -42,7 +42,9 @@ npm start
 - Navigate between cards using the Previous/Next buttons
 - Your progress is saved automatically between sessions
 
+## Screenshots
 
+![FlashMaster App](./flash-card.png)
 
 ## Contributing
 
